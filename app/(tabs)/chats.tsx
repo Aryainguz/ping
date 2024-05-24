@@ -1,13 +1,13 @@
-// Home.js
+// Chats.js
 import React from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, SafeAreaView, Image } from 'react-native';
 import { IconButton, FAB } from 'react-native-paper';
 
-const Home = () => {
+const Chats = () => {
   const chats = [
-    { id: '1', name: 'Alice', message: 'Hey, how are you?', time: '12:00 PM', avatar: 'https://i.pravatar.cc/150?img=1' },
-    { id: '2', name: 'Bob', message: 'Let’s catch up soon!', time: '11:45 AM', avatar: 'https://i.pravatar.cc/150?img=2' },
-    { id: '3', name: 'Charlie', message: 'Are you coming to the party?', time: '10:30 AM', avatar: 'https://i.pravatar.cc/150?img=3' },
+    { id: '1', name: 'TYLER', message: 'Hey, how are you?', time: '12:00 PM', avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfCIeX0gI4cZt6Gik97kXpOnkXwPycykyJ3iU6RvBuA&s' },
+    { id: '2', name: 'NARRATOR', message: 'Let’s catch up soon!', time: '11:45 AM', avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfCIeX0gI4cZt6Gik97kXpOnkXwPycykyJ3iU6RvBuA&s' },
+    { id: '3', name: 'ME', message: 'Are you coming to the party?', time: '10:30 AM', avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfCIeX0gI4cZt6Gik97kXpOnkXwPycykyJ3iU6RvBuA&s' },
     // Add more chat items here
   ];
 
@@ -112,4 +112,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default Chats;

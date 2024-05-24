@@ -28,7 +28,7 @@ function InitialLayout() {
     }
     const inTabsGroup = segments[0] === "(auth)";  // Check if the user is in the (auth) folder  
     if (isSignedIn && !inTabsGroup) {
-      router.replace("/home");
+      router.replace("/chats");
     } else if (!isSignedIn) {
       router.replace("/signup");
     }

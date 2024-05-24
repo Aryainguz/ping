@@ -73,7 +73,7 @@ const Index = () => {
           Terms & Privacy Policy
         </Text>
 
-        <Link href="/home">
+        <Link href="/chats">
           <TouchableOpacity
             style={{
               backgroundColor: "#002DE3",

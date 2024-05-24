@@ -54,7 +54,7 @@ const Register = () => {
       });
 
       await setActive({ session: completeSignUp.createdSessionId });
-      router.replace('/home');
+      router.replace('/chats');
     } catch (err: any) {
       alert(err.errors[0].message);
     } finally {
