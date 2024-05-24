@@ -75,6 +75,7 @@ const Register = () => {
           <TouchableOpacity onPress={onSignUpPress} style={styles.button} >
             <Text style={styles.btnText}>Sign Up</Text>
           </TouchableOpacity>
+          <Text style={{ textAlign: 'center' }}>Already have an account? <Text onPress={() => router.replace('/signin')} style={{ color: '#002DE3' }}>Sign In</Text></Text>
         </>
       )}
 

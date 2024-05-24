@@ -1,14 +1,21 @@
-import { useSignIn } from '@clerk/clerk-expo';
-import { Link } from 'expo-router';
-import React, { useState } from 'react';
-import { View, StyleSheet, TextInput, Button, Pressable, Text, Alert } from 'react-native';
-import Spinner from 'react-native-loading-spinner-overlay';
+import { useSignIn, useUser } from "@clerk/clerk-expo";
+import { useRouter } from "expo-router";
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
+} from "react-native";
+import Spinner from "react-native-loading-spinner-overlay";
+
 
 const Login = () => {
   const { signIn, setActive, isLoaded } = useSignIn();
 
-  const [emailAddress, setEmailAddress] = useState('');
-  const [password, setPassword] = useState('');
+  const [emailAddress, setEmailAddress] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   const onSignInPress = async () => {
@@ -31,47 +38,86 @@ const Login = () => {
     }
   };
 
+  const router = useRouter();
+
+  const {user} = useUser();
+
+  if (user) {
+    router.replace("/home");
+    return
+
+  }
+
   return (
     <View style={styles.container}>
       <Spinner visible={loading} />
+      <Text style={styles.heading}>Sign In</Text>
+      <TextInput
+        autoCapitalize="none"
+        placeholder="simon@galaxies.dev"
+        value={emailAddress}
+        onChangeText={setEmailAddress}
+        style={styles.inputField}
+      />
+      <TextInput
+        placeholder="password"
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry
+        style={styles.inputField}
+      />
 
-      <TextInput autoCapitalize="none" placeholder="simon@galaxies.dev" value={emailAddress} onChangeText={setEmailAddress} style={styles.inputField} />
-      <TextInput placeholder="password" value={password} onChangeText={setPassword} secureTextEntry style={styles.inputField} />
-
-      <Button onPress={onSignInPress} title="Login" color={'#6c47ff'}></Button>
-
-      <Link href="/reset" asChild>
-        <Pressable style={styles.button}>
-          <Text>Forgot password?</Text>
-        </Pressable>
-      </Link>
-      <Link href="/register" asChild>
-        <Pressable style={styles.button}>
-          <Text>Create Account</Text>
-        </Pressable>
-      </Link>
+      <TouchableOpacity onPress={onSignInPress} style={styles.button}>
+        <Text style={styles.btnText}>Sign In</Text>
+      </TouchableOpacity>
+      <Text style={{ textAlign: "center" }}>
+        Don't have an account ?
+        {" "}
+        <Text
+          onPress={() => router.replace("/signup")}
+          style={{ color: "#002DE3" }}
+        >
+           Sign Up
+        </Text>
+      </Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  heading: {
+    fontSize: 33,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginVertical: 20,
+  },
   container: {
     flex: 1,
-    justifyContent: 'center',
-    padding: 20,
+    justifyContent: "center",
+    padding: 33,
   },
   inputField: {
     marginVertical: 4,
     height: 50,
     borderWidth: 1,
-    borderColor: '#6c47ff',
+    borderColor: "#002DE3",
     borderRadius: 4,
     padding: 10,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
+  },
+  TouchableOpacity: {
+    margin: 8,
+    alignItems: "center",
   },
   button: {
-    margin: 8,
-    alignItems: 'center',
+    backgroundColor: "#002DE3",
+    padding: 10,
+    borderRadius: 20,
+    alignItems: "center",
+    marginVertical: 9,
+  },
+  btnText: {
+    color: "#fff",
   },
 });
 
