@@ -1,11 +1,12 @@
 import { Link } from "expo-router";
-import { Image, Text, View } from "react-native";
+import { Image, Text, View, useColorScheme } from "react-native";
 import {
   TouchableOpacity,
   GestureHandlerRootView,
 } from "react-native-gesture-handler";
 
 const Index = () => {
+  const mode = useColorScheme();
   return (
     <GestureHandlerRootView>
       <View
@@ -13,10 +14,11 @@ const Index = () => {
           flex: 1,
           justifyContent: "center",
           alignItems: "center",
+          backgroundColor: mode === "dark" ? "#0F1828" : "#fff",
         }}
       >
         <Image
-          source={require("../assets/images/Illustration.png")}
+          source={mode =="dark" ? require("../assets/images/Illustration-dark.png") : require("../assets/images/Illustration.png")}
           style={{
             position: "relative",
             top: 20,
@@ -37,12 +39,12 @@ const Index = () => {
               fontWeight: "semibold",
               textAlign: "center",
               marginTop: 20,
-              color: "black",
+              color: mode === "dark" ? "#fff" : "#0F1828",
               position: "relative",
               top: 20,
             }}
           >
-            Chat on the go with{" "}
+            Chat anyone, anywhere in the world with{" "}
             <Text
               style={{
                 color: "black",
@@ -62,7 +64,8 @@ const Index = () => {
         <Text
           style={{
             fontSize: 15,
-            color: "black",
+            color: mode === "dark" ? "#fff" : "#0F1828",
+
             position: "relative",
             top: 90,
           }}
@@ -70,7 +73,7 @@ const Index = () => {
           Terms & Privacy Policy
         </Text>
 
-        <Link href="/signup">
+        <Link href="/home">
           <TouchableOpacity
             style={{
               backgroundColor: "#002DE3",
