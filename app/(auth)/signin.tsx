@@ -43,7 +43,7 @@ const Login = () => {
   const {user} = useUser();
 
   if (user) {
-    router.replace("/chats");
+    router.replace("/home");
     return
 
   }

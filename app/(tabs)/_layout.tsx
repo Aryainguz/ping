@@ -17,11 +17,11 @@ export default function TabLayout() {
         headerShown: false,
       }}>
       <Tabs.Screen
-        name="chats"
+        name="home"
         options={{
-          title: 'Chats',
+          title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-           <Ionicons name={focused ? 'chatbubbles-outline' : 'chatbubbles-sharp'} size={30} color={color} />
+           <Ionicons name={focused ? 'file-tray-outline' : 'file-tray-sharp'} size={30} color={color} />
           ),
         }}
       />
