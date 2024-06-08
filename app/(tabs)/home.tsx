@@ -162,7 +162,7 @@ const FileSharingScreen: React.FC = () => {
       <Text style={styles.title}>File Sharing</Text>
       {clientId ? (
         <Text style={styles.clientId}>Your Client ID: {clientId}</Text>
-      ) : null}
+      ) : "Something went wrong. Please try again later."}
       <Button title="Pick a File" onPress={pickFile} />
       {file && (
         <View style={styles.filePreview}>
