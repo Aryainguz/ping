@@ -1,50 +1,58 @@
-# Welcome to your Expo app 👋
+# Photo Sharing App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A real time photo-sharing app built using React Native with real-time communication via WebSockets and user authentication via Clerk.
 
-## Get started
+![Home Screen](./assets/home-screen.png)
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- User authentication using Clerk.
+- Real-time photo sharing using WebSockets.
+- Private chat between users.
 
-2. Start the app
+## Technologies Used
 
-   ```bash
-    npx expo start
-   ```
+- React Native
+- Expo
+- WebSocket
+- Clerk for authentication
 
-In the output, you'll find options to open the app in a
+## Setup
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Prerequisites
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Node.js
+- Expo CLI
+- Clerk account
 
-## Get a fresh project
+### Frontend Setup
 
-When you're ready, run:
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/photo-sharing-app.git
+    cd photo-sharing-app
+    ```
 
-```bash
-npm run reset-project
-```
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+3. Set up Clerk:
+    - Follow Clerk's documentation to set up your application and obtain your API keys.
+    - Add your Clerk keys in your application code.
 
-## Learn more
+4. Start the Expo server:
+    ```bash
+    expo start
+    ```
 
-To learn more about developing your project with Expo, look at the following resources:
+### Backend Setup
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+   get backend signaling web socket server from this repository - 
 
-## Join the community
+## Running the App
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Ensure both the Expo server and the WebSocket signaling server are running.
+2. Open the Expo app on your mobile device or emulator.
+3. Scan the QR code provided by the Expo server to open the app.
