@@ -1,6 +1,6 @@
 # Photo Sharing App
 
-A real time photo-sharing app built using React Native with real-time communication via WebSockets and user authentication via Clerk.
+A real time photo-sharing and chat app built using React Native with real-time communication via WebSockets and user authentication via Clerk.
 
 ![Home Screen](https://github.com/Aryainguz/ping/blob/main/assets/Screenshot_1717950608.png)
 
