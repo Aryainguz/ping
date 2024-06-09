@@ -2,7 +2,7 @@
 
 A real time photo-sharing app built using React Native with real-time communication via WebSockets and user authentication via Clerk.
 
-![Home Screen](./assets/home-screen.png)
+![Home Screen](https://github.com/Aryainguz/ping/blob/main/assets/Screenshot_1717950608.png)
 
 ## Features
 
@@ -49,7 +49,7 @@ A real time photo-sharing app built using React Native with real-time communicat
 
 ### Backend Setup
 
-   get backend signaling web socket server from this repository - 
+   get backend signaling web socket server from this repository -  https://github.com/Aryainguz/ping-ws-server
 
 ## Running the App
 
